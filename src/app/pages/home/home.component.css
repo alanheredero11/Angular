@@ -1,0 +1,39 @@
+.container{
+    
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0, 0, 0, 0.8)),url(../../../assets/img/background_home.jpg);
+    filter: contrast(20%);
+    filter: brightness(120%);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+     
+    
+}
+
+    .container__title{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30%;
+        font-size: 120px;
+        text-align: center;
+        padding: 0%, 50%;
+    }
+
+    .container__description{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50PX;
+    }
+
+    .container__reclamo{
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50PX;
+            padding-top: 20%;
+        }
