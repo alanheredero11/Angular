@@ -2,11 +2,9 @@
     background-color: rgb(44, 143, 44);
     display: flex;
     justify-content: space-around;
-    padding: 2% 22%;
+    padding: 1% 22%;
 
-    position: relative;
-    bottom: 0;
-    width: 56%;
+    
 }
 
 

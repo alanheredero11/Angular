@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="content_container">
+        <div class="perfil_container">
+            <div class="img_container">
+                <img src="{{user.url}}" alt="" class="img_perfil">
+            </div>
+            <div class="complete_name_container">
+                {{complete_name()}}
+            </div>
+            <div class="container_campo nombre_container">
+                <p class="titulo_campo nombre_titulo">Nombre</p>
+                <div class="nombre_content">{{user.nombre}}</div>
+            </div>
+            <div class=" container_campo apellido_container">
+                <p class=" titulo_campo Apellido_titulo">Apellido</p>
+                <div class="nombre_content" >{{user.apellidos}}</div>
+            </div>
+            <div class=" container_campo correo_container">
+                <p class=" titulo_campo nombre_titulo">Correo</p>
+                <div class="nombre_content">{{user.correo}}</div>
+            </div>
+        </div>
+        <div class="mod_cointainer">
+            <div class="title_container">
+                Editar Datos
+            </div>
+            <div class="linea_separacion_mod"></div>
+            <div class="form_container">
+                <input type="text" class="input_form_modifier" placeholder="Nombre" #input_nombre>
+                <input type="text" class="input_form_modifier" placeholder="Apellido" #input_apellidos>
+                <input type="text" class="input_form_modifier" placeholder="Correo" #input_correo>
+                <input type="text" class="input_form_modifier" placeholder="Url" #input_foto>
+            </div>
+            <div class="button_container">
+                <button class="mod_button" (click)="modificar_datos(input_nombre, input_apellidos, input_correo, input_foto)">Modificar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,9 @@
     
     display: flex;
     justify-content: center;
-    padding: 6% ; 
+    align-items: center;
+    padding: 1% ; 
+    min-height: 67.5vh;
 }
 
     .container_form{
