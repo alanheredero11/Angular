@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Libro } from "src/app/models/libro";
+import { ServicioService } from "src/app/shared/servicio.service"
 
 @Component({
   selector: 'app-libros',
@@ -9,17 +10,30 @@ import { Libro } from "src/app/models/libro";
 export class LibrosComponent {
   public libros: Libro[];
 
-  constructor() {
-    this.libros = [
-      new Libro(null, null, "La Sombra en la tormenta", "Tapa Blanda", "Johan Anderson", 49.99, "https://images.unsplash.com/photo-1471440671318-55bdbb772f93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"),
-
-      new Libro(null, null, "La Sombra en la tormenta", "Tapa Blanda", "Johan Anderson", 49.99, "https://images.unsplash.com/photo-1471440671318-55bdbb772f93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80")
-    ]
+  constructor(public servicioLibro: ServicioService) {
+    this.libros = servicioLibro.getAll()
   }
 
-  public add_book(ref: HTMLInputElement, titulo: HTMLInputElement, tipoLibro: HTMLInputElement, autor: HTMLInputElement, precio: HTMLInputElement, photo: HTMLInputElement) {
+  public add_book(ref: HTMLInputElement, titulo: HTMLInputElement, tipoLibro: HTMLInputElement, autor: HTMLInputElement, 
+   precio: HTMLInputElement, photo: HTMLInputElement) {
 
-    let nuevo_libro = new Libro(Number(ref.value), 0, titulo.value, tipoLibro.value, autor.value, Number(precio.value), photo.value);
-    this.libros.push(nuevo_libro)
+    this.servicioLibro.add(new Libro(Number(ref.value), 0, titulo.value, tipoLibro.value, autor.value, Number(precio.value), photo.value))
+
+    // let nuevo_libro = new Libro(Number(ref.value), 0, titulo.value, tipoLibro.value, autor.value, Number(precio.value), photo.value);
+    // this.libros.push(nuevo_libro)   
   }
+
+  public delete(ref: number){
+    this.servicioLibro.delete(ref)
+  }
+
+  public search(ref: HTMLInputElement){
+    if (Number(ref.value) == 0){
+      this.libros = this.servicioLibro.getAll()
+    }else{
+    this.libros = this.servicioLibro.getOne(Number(ref.value))
+  }
+  console.log(ref)
+  }
+  ngOnInit(): void { }
 }

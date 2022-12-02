@@ -19,7 +19,9 @@
             <input type="number" #book_ref placeholder="Codigo Libro" class="input_class">
 
             <div class="button__container">
-                <button class="button__form">Modificar libro</button>
+                
+                <button class="button__form" type="reset"
+                    (click)="modify_book(book_ref, book_title, book_type, book_author, book_price, book_photo)">Modificar libro</button>
             </div>
         </form>
     </div>

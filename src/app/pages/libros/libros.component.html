@@ -1,7 +1,18 @@
+<div class="search_container">
+    
+        <form class="input_search">
+            <input type="text" placeholder="Buscador de libros" class="buscador--text" #input_search>
+            <button type="button"  class="buscador--img" (click)="search(input_search)">Search</button>
+        </form>
+    
+</div>
+
 <div class="content_container" *ngIf="libros.length != 0; else esfalso">
 
     <div class="card" *ngFor="let libro of libros; let i = index">
-        <div class="card__img">
+        
+        <div class="card__img">   
+            <button class="button_delete" (click)="delete(libro.id_libro)">X</button>
             <img src="{{libro.photo}}"
                 alt="Portada de libro" class="card__img">
         </div>
@@ -29,7 +40,7 @@
     </div>
 </div>
 <ng-template #esfalso >
-    <div class="no_content">Actualmente no hay libros en venta</div>
+    <div class="no_content">No se han encontrado libros en venta</div>
 </ng-template>
 
 <div class="container_body">
@@ -53,7 +64,7 @@
             <input type="number" #book_ref placeholder="Codigo Libro" class="input_class">
 
             <div class="button__container">
-                <button class="button__form"
+                <button class="button__form" type="reset"
                     (click)="add_book(book_ref, book_title, book_type, book_author, book_price, book_photo)">Insertar Libro</button>
             </div>
         </form>
