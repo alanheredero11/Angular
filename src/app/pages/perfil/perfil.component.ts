@@ -49,12 +49,12 @@ export class PerfilComponent implements OnInit {
       this.user.url = nueva_foto.value;
     }
 
-    if (nuevo_nombre.value == "" && nuevo_apellidos.value == "" && nuevo_correo.value == "" && nueva_foto.value == ""){
-      alert("No se ha indicado nueva información")
-    }
-    else{
-      alert("Usuario actualizado")
-    }
+    // if (nuevo_nombre.value == "" && nuevo_apellidos.value == "" && nuevo_correo.value == "" && nueva_foto.value == ""){
+    //   alert("No se ha indicado nueva información")
+    // }
+    // else{
+    //   alert("Usuario actualizado")
+    // }
     
   }
 

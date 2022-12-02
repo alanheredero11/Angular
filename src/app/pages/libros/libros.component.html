@@ -1,0 +1,61 @@
+<div class="content_container" *ngIf="libros.length != 0; else esfalso">
+
+    <div class="card" *ngFor="let libro of libros; let i = index">
+        <div class="card__img">
+            <img src="{{libro.photo}}"
+                alt="Portada de libro" class="card__img">
+        </div>
+        <div class="card__front_page_type">
+            <p>{{libro.tipoLibro}}</p>
+        </div>
+        <div class="line__separation">
+            <hr>
+        </div>
+        <div class="card__book_title">
+            <p>{{libro.titulo}}</p>
+        </div>
+        <div class="card__book_autor">
+            <p>Autor: {{libro.autor}}</p>
+        </div>
+        <div class="card__book_ref">
+            <p>{{libro.id_libro | toReference}}</p>
+        </div>
+        <div class="card__book_price">
+            <p>{{libro.precio}}€</p>
+        </div>
+        <div class="card__button_buy">
+            <button [ngClass]="(i % 2) ===  0 ? 'buy__button' : 'buy__button_grey '" >Comprar</button>
+        </div>
+    </div>
+</div>
+<ng-template #esfalso >
+    <div class="no_content">Actualmente no hay libros en venta</div>
+</ng-template>
+
+<div class="container_body">
+    <div class="container_form">
+        <div class="container_form__title">
+            Añadir libro
+        </div>
+        <div class="linea"></div>
+        <form action="" class="container_form__inputs">
+
+            <input type="text" #book_title placeholder="Título" class="input_class">
+
+            <input type="text" #book_type placeholder="Tapa blanda/dura" class="input_class">
+
+            <input type="text" #book_author placeholder="Autor" class="input_class">
+
+            <input type="number" #book_price placeholder="Precio" class="input_class">
+
+            <input type="text" #book_photo placeholder="Foto" class="input_class">
+
+            <input type="number" #book_ref placeholder="Codigo Libro" class="input_class">
+
+            <div class="button__container">
+                <button class="button__form"
+                    (click)="add_book(book_ref, book_title, book_type, book_author, book_price, book_photo)">Insertar Libro</button>
+            </div>
+        </form>
+    </div>
+</div>
