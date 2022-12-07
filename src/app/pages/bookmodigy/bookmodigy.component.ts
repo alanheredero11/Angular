@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Libro } from "src/app/models/libro";
 import { ServicioService } from "src/app/shared/servicio.service"
 import { Router } from "@angular/router"
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-bookmodigy',
@@ -19,7 +20,13 @@ export class BookmodigyComponent {
     precio: HTMLInputElement, photo: HTMLInputElement){
     this.servicioLibro.edit(new Libro(Number(ref.value), 0, titulo.value, tipoLibro.value, autor.value, Number(precio.value), photo.value))
     
-    this.router.navigateByUrl("/libros")
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Modificado con Exito',
+    showConfirmButton: false,
+    timer: 1500
+})
 
     console.log(this.libros)
 

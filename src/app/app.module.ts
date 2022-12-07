@@ -12,6 +12,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { ToReferencePipe } from './pipes/to-reference.pipe';
 import { BookmodigyComponent } from './pages/bookmodigy/bookmodigy.component';
+import { ShowBooksComponent } from './pages/show-books/show-books.component';
+
 
 
 
@@ -27,6 +29,8 @@ import { BookmodigyComponent } from './pages/bookmodigy/bookmodigy.component';
     LibrosComponent,
     ToReferencePipe,
     BookmodigyComponent,
+    ShowBooksComponent,
+ 
     
   ],
   imports: [

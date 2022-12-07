@@ -1,29 +1,4 @@
-.search_container{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
 
-    .input_search {
-        border: 2px solid grey;
-        border-radius: 5px;
-        padding: 10px;
-        height: 22px;
-        width: fit-content;
-        /* background-color: white; */
-        display: flex;
-            align-items: center;
-    }
-
-        .buscador--text {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            border: 0px; 
-            height: 30px;
-            width: 200px;
-            
-        }
 
             /* .buscador--text:focus{
                 border: 0px;
