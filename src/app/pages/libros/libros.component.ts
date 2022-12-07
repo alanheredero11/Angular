@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Libro } from "src/app/models/libro";
 import { ServicioService } from "src/app/shared/servicio.service"
+import { Router } from "@angular/router"
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-libros',
@@ -10,7 +12,7 @@ import { ServicioService } from "src/app/shared/servicio.service"
 export class LibrosComponent {
   public libros: Libro[];
 
-  constructor(public servicioLibro: ServicioService) {
+  constructor(public servicioLibro: ServicioService, private router: Router) {
     this.libros = servicioLibro.getAll()
   }
 
@@ -21,19 +23,19 @@ export class LibrosComponent {
 
     // let nuevo_libro = new Libro(Number(ref.value), 0, titulo.value, tipoLibro.value, autor.value, Number(precio.value), photo.value);
     // this.libros.push(nuevo_libro)   
+
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Añadido con Exito',
+    showConfirmButton: false,
+    timer: 1500
+   })
+
   }
 
-  public delete(ref: number){
-    this.servicioLibro.delete(ref)
-  }
+  
 
-  public search(ref: HTMLInputElement){
-    if (Number(ref.value) == 0){
-      this.libros = this.servicioLibro.getAll()
-    }else{
-    this.libros = this.servicioLibro.getOne(Number(ref.value))
-  }
-  console.log(ref)
-  }
+  
   ngOnInit(): void { }
 }

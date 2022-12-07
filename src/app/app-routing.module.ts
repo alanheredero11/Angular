@@ -5,6 +5,7 @@ import { RegistroComponent } from 'src/app/pages/registro/registro.component';
 import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
 import { LibrosComponent } from "src/app/pages/libros/libros.component";
 import { BookmodigyComponent } from "src/app/pages/bookmodigy/bookmodigy.component";
+import { ShowBooksComponent } from "src/app/pages/show-books/show-books.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: "registro", component: RegistroComponent }, 
   { path: "perfil", component: PerfilComponent },
   { path: "libros", component: LibrosComponent },
-  { path: "modificar_libro", component: BookmodigyComponent }
+  { path: "modificar_libro", component: BookmodigyComponent },
+  { path: "show_books", component: ShowBooksComponent }
 ];
 
 @NgModule({

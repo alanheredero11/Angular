@@ -1,4 +1,4 @@
-<!-- <div class="search_container">
+<div class="search_container">
     
         <form class="input_search">
             <input type="text" placeholder="Buscador de libros" class="buscador--text" #input_search>
@@ -41,32 +41,4 @@
 </div>
 <ng-template #esfalso >
     <div class="no_content">No se han encontrado libros en venta</div>
-</ng-template> -->
-
-<div class="container_body">
-    <div class="container_form">
-        <div class="container_form__title">
-            Añadir libro
-        </div>
-        <div class="linea"></div>
-        <form action="" class="container_form__inputs">
-
-            <input type="text" #book_title placeholder="Título" class="input_class">
-
-            <input type="text" #book_type placeholder="Tapa blanda/dura" class="input_class">
-
-            <input type="text" #book_author placeholder="Autor" class="input_class">
-
-            <input type="number" #book_price placeholder="Precio" class="input_class">
-
-            <input type="text" #book_photo placeholder="Foto" class="input_class">
-
-            <input type="number" #book_ref placeholder="Codigo Libro" class="input_class">
-
-            <div class="button__container">
-                <button class="button__form" type="reset"
-                    (click)="add_book(book_ref, book_title, book_type, book_author, book_price, book_photo)">Insertar Libro</button>
-            </div>
-        </form>
-    </div>
-</div>
+</ng-template>
